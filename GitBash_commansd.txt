@@ -1,0 +1,7 @@
+ls -a : to see hidden files
+
+Commit commands:
+git init, git add, git status, git commit
+
+Git concepts:
+working repository, staging area
