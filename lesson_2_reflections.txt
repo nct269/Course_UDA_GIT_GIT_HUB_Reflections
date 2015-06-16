@@ -1,6 +1,6 @@
-﻿What happens when you initialize a repository? Why do you need to do it?
+What happens when you initialize a repository? Why do you need to do it?
 
-Git insert into the cuurrent folder a set of files and marker to allow for the version contrling.
+Git insert into the current folder a set of files and marker to allow for the version contrling.
 
 How is the staging area different from the working directory and the repository?
 What value do you think it offers?
@@ -13,10 +13,19 @@ change?
 What are some situations when branches would be helpful in keeping your history
 organized? How would branches help?
 
+When developping different language versions, when doing moke-ups, when fixing bugs
+-> Basically when one change of context
+
 How do the diagrams help you visualize the branch structure?
+It gives a structure to the branches
 
 What is the result of merging two branches together? Why do we represent it in
 the diagram the way we do?
 
+The new merged branch includes specificities from both branches and contains all the commit, that is why it is represented this way
+
 What are the pros and cons of Git’s automatic merging vs. always doing merges
 manually?
+
+pros: for simple cases it avoids losing time and potential mistakes
+cons: rely on Git ability to solve confict the way one wants it.
