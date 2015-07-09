@@ -3,7 +3,13 @@ ls -a : to see hidden files
 Commit commands:
 git init, git add, git status (to see which file has been modified), git commit,
 
-git origin
+git log
+
+git log --graph -10
+
+git remote (to see the remotes of the project); git remote -v (for verbose, gives more informations); git remote add XYZ URL (can be ssh if arametrized) 
+
+git push remote_name branch_X (git looks at the most recent commit from branch_X and follow the reachable commits until it finds one it already has, to push only what is required)
 
 git diff (compares the working dirctory to the staging area)
 
