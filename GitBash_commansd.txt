@@ -1,3 +1,6 @@
+To configure git bash copy the thwo files in the gitbash home directory: git-completion.bash, git-prompt.sh
+and create or copy paste the content of the file .bash_profile. It's in lesson 1 at the end for mac.
+
 ls -a : to see hidden files
 
 Commit commands:
@@ -7,7 +10,7 @@ git log
 
 git log --graph -10
 
-git remote (to see the remotes of the project); git remote -v (for verbose, gives more informations); git remote add XYZ URL (can be ssh if arametrized) 
+git remote (to see the remotes of the project); git remote -v (for verbose, gives more informations); git remote add name_XYZ URL (can be ssh if arametrized) 
 
 git push remote_name branch_X (git looks at the most recent commit from branch_X and follow the reachable commits until it finds one it already has, to push only what is required)
 
@@ -38,10 +41,21 @@ git branch -d XYZ
 	- To do when the branch has been merged
 	- Rem: if the branch is deleted before the merge, then it turns the commits into unreachable ones.
 
-git merge Id2 Id1
-	- Merge Id2 in Id1
+git fecth origin/master (remote/branch) or git fetch origin (remote) to get the commit history without merging it.
+
+git fetch should be flowed by git git merge. If auto merge can't be done, then go in the file to see the three versions.
+
+git merge Id2 Id1 (git merge master origin/master)
+	- Merge from Id2 in Id1, you work on Id1
+
+Rem: git pull is equivalent to the two commands git fetch and git merge
 
 git log -n1
+
+
+A branch has a name with its remote, if nothing then it's local.
+E.g. you can refer to the master from the origin remote by calling origin/master (remote/branch).
+The state checked for origin/master is the one imported from the last fetch.
 
 
 Git concepts:
@@ -51,6 +65,7 @@ not committed changes have no id yet
 Checked out branch is the "active branch"
 head is the current commit
 master is the default commit created
+remote is the remote directories from where the code is origined (if code is created locally and then pushed, then an origin remote is  created by default)
 
 When one creates a non reachable commit, i.e. not reachable by any branches, then it won't appear in the log and it won't impact the branches neither
 
@@ -64,6 +79,13 @@ Important: git merge creates a new commit
 
 When resolving conflicts in course of a merge operation, the conflictual file opens, there are three sections the current branch code, the original code, the other branch code. Sort out the problem, check with status the changes, add the file(s), commit.
 
+Fast forwrd merge:
+The branch you are merging into is an ancestor of the branch that you are merging from. Then the branch you are merging into is just sent forward to the last commit of branch that you are merging from.
+
+Git pull reqest:
+Workflow to integrate changes to a master branch
+Create a new local branch, push it on the remote and create a pull request.
+If the code is compatible then github tells you, otherwise asked for conflict solving.
 
 A note about git merge:
 
